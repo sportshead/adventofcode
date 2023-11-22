@@ -37,6 +37,7 @@ function today() {
 function part2() {
   kill $!
   cp part1.ts part2.ts
+  swap
 
   bun --watch run part2.ts &
 }
