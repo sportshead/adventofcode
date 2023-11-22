@@ -1,6 +1,5 @@
 import input from "./input.txt";
-import { NamedTreeNode } from "../../../utils/structs.ts";
-import { sortAscending } from "@utils";
+import { sortAscending, NamedTreeNode } from "@utils";
 
 const lines = input.split("\n");
 

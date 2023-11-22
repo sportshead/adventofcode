@@ -1,5 +1,5 @@
 import input from "./input.txt";
-import { LOWERCASE, UPPERCASE } from "../../../utils/consts.ts";
+import { LOWERCASE, UPPERCASE } from "@utils";
 
 const lines = input.split("\n");
 
