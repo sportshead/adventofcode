@@ -2,6 +2,7 @@ import input from "./input.txt";
 
 const lines = input.split("\n");
 
-for (const line of lines) {
+for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
     if (line === "") break;
 }
