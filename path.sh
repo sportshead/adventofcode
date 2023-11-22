@@ -39,6 +39,7 @@ function part2() {
   cp part1.ts part2.ts
   swap
 
+  idea part2.ts
   bun --watch run part2.ts &
 }
 
