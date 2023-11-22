@@ -28,8 +28,8 @@ function today() {
   touch _input.txt
 
   browse
-  idea input.txt
   idea part1.ts
+  idea input.txt
 
   bun --watch run part1.ts &
 }
