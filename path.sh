@@ -19,11 +19,10 @@ function today() {
   echo "$dir"
   mkdir -p "$dir"
   cd "$dir" || (echo "failed to cd!"; return)
+  [ ! -f part2.ts ] && (date -Iseconds > timestarted.txt)
 
   projectRoot="$(projectRoot.ts)"
-  if [ ! -f part1.ts ]; then
-    cp "$projectRoot/template.ts" part1.ts
-  fi
+  [ ! -f part2.ts ] && cp "$projectRoot/template.ts" part1.ts
   touch input.txt
   touch _input.txt
 
@@ -36,7 +35,7 @@ function today() {
 
 function part2() {
   kill $!
-  cp part1.ts part2.ts
+  [ ! -f part2.ts ] && cp part1.ts part2.ts
   swap
 
   idea part2.ts

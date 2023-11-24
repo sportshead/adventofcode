@@ -8,3 +8,6 @@ export const sortAscending = <T extends number | bigint>(a: T, b: T): T =>
 
 export const sortDescending = <T extends number | bigint>(a: T, b: T): T =>
     <T>(b - a);
+
+export const findHighestReducer = <T>(acc: T, cur: T): T =>
+    cur > acc ? cur : acc;
