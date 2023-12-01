@@ -1,6 +1,7 @@
 # adventofcode
 
-Scripts and solutions for [Advent of Code](https://adventofcode.com/).
+Scripts and solutions for [Advent of Code](https://adventofcode.com/). You can find my results in the commit messages of each day, 
+with additional adjusted times to account for when I started (timezones are mean).
 
 ## usage
 

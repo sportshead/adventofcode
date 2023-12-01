@@ -4,7 +4,7 @@ export const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
 export const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 export const DIGITS = "0123456789";
 
-export const NUMBERS_WORDS = [
+export const DIGITS_WORDS = [
     "zero",
     "one",
     "two",

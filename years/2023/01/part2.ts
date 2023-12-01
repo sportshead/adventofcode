@@ -1,5 +1,5 @@
 import input from "./input.txt";
-import { NUMBERS_WORDS } from "@utils";
+import { DIGITS_WORDS } from "@utils";
 
 const lines = input.split("\n");
 
@@ -10,7 +10,7 @@ for (let i = 0; i < lines.length; i++) {
     let matches = [];
     for (let i = 0; i < line.length; i++) {
         let n = parseInt(line.charAt(i));
-        let word = NUMBERS_WORDS.findIndex((v) => line.slice(i).startsWith(v));
+        let word = DIGITS_WORDS.findIndex((v) => line.slice(i).startsWith(v));
         let match = isNaN(n) ? (word === -1 ? null : word) : n;
         if (match != null) {
             sum += match * 10;
@@ -20,7 +20,7 @@ for (let i = 0; i < lines.length; i++) {
     }
     for (let i = line.length - 1; i > -1; i--) {
         let n = parseInt(line.charAt(i));
-        let word = NUMBERS_WORDS.findIndex((v) => line.slice(i).startsWith(v));
+        let word = DIGITS_WORDS.findIndex((v) => line.slice(i).startsWith(v));
         let match = isNaN(n) ? (word === -1 ? null : word) : n;
         if (match != null) {
             sum += match;
