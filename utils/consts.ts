@@ -4,6 +4,19 @@ export const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
 export const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 export const DIGITS = "0123456789";
 
+export const NUMBERS_WORDS = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+];
+
 export enum DIRECTION {
     UP = "U",
     DOWN = "D",
