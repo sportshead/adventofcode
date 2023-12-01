@@ -1,6 +1,7 @@
 #!/usr/bin/env bun
 
-import { cookieHeader, getDayFromCwd, getYearFromCwd } from "@utils";
+import { cookieHeader, getDayFromCwd, getYearFromCwd, exec } from "@utils";
+import browseURL from "./browse.ts";
 
 const year = getYearFromCwd();
 const day = getDayFromCwd();
@@ -50,4 +51,9 @@ await fetch(`https://adventofcode.com/${year}/day/${day}/answer`, {
         new HTMLRewriter().on("main > article", elementHandler).transform(res),
     )
     .then((res) => elementHandler.collectedText || res.text())
-    .then((txt) => console.log(txt));
+    .then((txt) => {
+        console.log(txt);
+        if (txt.includes("[Continue to Part Two]")) {
+            return exec(`open "${browseURL}#part2"`);
+        }
+    });
