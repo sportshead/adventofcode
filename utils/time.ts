@@ -8,7 +8,7 @@ export const WEEKS = 7 * DAYS;
 // shifted to UTC-5
 export const getAOCDate = (d?: Date) => {
     const date = d ?? new Date();
-    date.setTime(date.getTime() + 5 * HOURS);
+    date.setTime(date.getTime() - 5 * HOURS);
     return date;
 };
 
