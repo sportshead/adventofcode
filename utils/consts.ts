@@ -4,6 +4,8 @@ export const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
 export const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 export const DIGITS = "0123456789";
 
+export const SYMBOLS = "!@#$%^&*()-+=[]{};:<>/?";
+
 export const DIGITS_WORDS = [
     "zero",
     "one",

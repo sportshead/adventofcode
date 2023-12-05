@@ -40,3 +40,5 @@ export const expandArray2D = <T>(
 ): T[][] => {
     return arr.map((row) => expandArray(row, maxLen, filler));
 };
+
+export const parseIntMap = (str: string) => parseInt(str);
