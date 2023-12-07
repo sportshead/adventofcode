@@ -2,8 +2,8 @@
 import { getDayFromCwd, getYearFromCwd } from "@utils";
 
 const browseURL = `https://adventofcode.com/${
-    process.argv[2] || getYearFromCwd()
-}/day/${process.argv[3] || getDayFromCwd()}`;
+    (import.meta.main && process.argv[2]) || getYearFromCwd()
+}/day/${(import.meta.main && process.argv[3]) || getDayFromCwd()}`;
 export default browseURL;
 
 console.log(browseURL);

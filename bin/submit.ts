@@ -53,7 +53,7 @@ await fetch(`https://adventofcode.com/${year}/day/${day}/answer`, {
     .then((res) => elementHandler.collectedText || res.text())
     .then((txt) => {
         console.log(txt);
-        if (txt.includes("[Continue to Part Two]")) {
+        if (txt.includes("That's the right answer!")) {
             return exec(`open "${browseURL}#part2"`);
         }
     });
