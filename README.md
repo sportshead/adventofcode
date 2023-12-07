@@ -21,4 +21,7 @@ submit 1 <answer>
 part2 # automatically swaps back inputs, copies part1.ts to part2.ts, starts new watcher
 swap
 submit 2 <answer>
+
+adjust # get time taken for part1 and part2 based on timestarted.txt
+# you need to have a private leaderboard created, user id is hardcoded in bin/adjust.ts
 ```

@@ -14,3 +14,15 @@ export const getAOCDate = (d?: Date) => {
 
 export const getAOCYear = (d?: Date) => getAOCDate(d).getFullYear();
 export const getAOCDay = (d?: Date) => getAOCDate(d).getDate();
+
+export const secondsToHMMSS = (_s: number) => {
+    let ms = _s * SECONDS;
+    const h = Math.floor(ms / HOURS);
+    ms = ms % HOURS;
+    const m = Math.floor(ms / MINUTES);
+    ms = ms % MINUTES;
+    const s = Math.floor(ms / SECONDS);
+    return `${h ? `${h}:` : ""}${m.toString().padStart(h && 2, "0")}:${s
+        .toString()
+        .padStart(2, "0")}`;
+};
