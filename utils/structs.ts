@@ -128,7 +128,7 @@ export class Vector2<T extends number | bigint = number> {
     }
 
     static fromJSON<T extends number | bigint>(json: string): Vector2<T> {
-        return new Vector2<T>().fromJSON(json);
+        return new Vector2<T>(0 as T, 0 as T).fromJSON(json);
     }
 }
 
