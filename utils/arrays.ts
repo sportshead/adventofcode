@@ -51,3 +51,6 @@ export const expandArray2D = <T>(
 };
 
 export const parseIntMap = (str: string) => parseInt(str);
+
+export const transpose = <T>(array: T[][]): T[][] =>
+    array[0].map((_, colIndex) => array.map((row) => row[colIndex]));
