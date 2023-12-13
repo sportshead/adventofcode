@@ -54,6 +54,5 @@ function swap() {
   mv __input.txt input.txt
 }
 
-function bench() {
-  hyperfine -w 3 --export-json timings.json -P pt 1 2 'bun run part{pt}.ts'
-}
+alias bench="hyperfine -w 3 --export-json timings.json -P pt 1 2 'bun run part{pt}.ts'"
+
