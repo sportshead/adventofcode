@@ -30,7 +30,9 @@ function today() {
   idea part1.ts
   idea input.txt
 
-  bun --watch run part1.ts &
+  if [[ "$@" != *"-s"* ]]; then 
+      bun --watch run part1.ts &
+  fi
 }
 
 function part2() {
@@ -50,4 +52,8 @@ function swap() {
   mv _input.txt __input.txt
   mv input.txt _input.txt
   mv __input.txt input.txt
+}
+
+function bench() {
+  hyperfine -w 3 --export-json timings.json -P pt 1 2 'bun run part{pt}.ts'
 }
