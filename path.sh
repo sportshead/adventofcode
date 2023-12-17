@@ -27,10 +27,10 @@ function today() {
   touch _input.txt
 
   browse
-  idea part1.ts
-  idea input.txt
+  code part1.ts
+  code input.txt
 
-  if [[ "$@" != *"-s"* ]]; then 
+  if [[ "$@" != *"-s"* ]]; then
       bun --watch run part1.ts &
   fi
 }
@@ -40,7 +40,7 @@ function part2() {
   [ ! -f part2.ts ] && cp part1.ts part2.ts
   swap
 
-  idea part2.ts
+  code part2.ts
   bun --watch run part2.ts &
 }
 
@@ -55,4 +55,3 @@ function swap() {
 }
 
 alias bench="hyperfine -w 3 --export-json timings.json -P pt 1 2 'bun run part{pt}.ts'"
-
