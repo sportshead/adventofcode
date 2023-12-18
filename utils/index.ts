@@ -6,3 +6,4 @@ export * from "./structs.ts";
 export * from "./maths.ts";
 export * from "./optimisation.ts";
 export * from "./time.ts";
+export * from "./2d.ts";
