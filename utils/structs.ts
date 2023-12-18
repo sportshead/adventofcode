@@ -33,7 +33,7 @@ export class Vector2<T extends number | bigint = number> {
         this.set(...args);
     }
 
-    set(...args: [vec: Vector2<T>] | [x: T, y: T]): Vector2<T> {
+    set(...args: [vec: Vector2<T>] | [x: T, y: T]): typeof this {
         if (typeof args[0] === "number" || typeof args[0] === "bigint") {
             this.x = args[0];
             this.y = args[1]!;
@@ -52,6 +52,12 @@ export class Vector2<T extends number | bigint = number> {
         const a = Math.abs(this.distanceX(other));
         const b = Math.abs(this.distanceY(other));
         return Math.sqrt(a * a + b * b);
+    }
+
+    manhattanDistance(this: Vector2<number>, other: Vector2<number>): number {
+        const a = Math.abs(this.distanceX(other));
+        const b = Math.abs(this.distanceY(other));
+        return a + b;
     }
 
     distanceX(other: Vector2<T>): T {
@@ -115,7 +121,7 @@ export class Vector2<T extends number | bigint = number> {
         return JSON.stringify(this);
     }
 
-    toJSON(): [T, T] {
+    toJSON(): T[] {
         return [this.x, this.y];
     }
 
@@ -129,6 +135,10 @@ export class Vector2<T extends number | bigint = number> {
 
     static fromJSON<T extends number | bigint>(json: string): Vector2<T> {
         return new Vector2<T>(0 as T, 0 as T).fromJSON(json);
+    }
+
+    equals(other: Vector2<T>): boolean {
+        return this.x === other.x && this.y === other.y;
     }
 }
 

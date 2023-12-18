@@ -1,5 +1,18 @@
 import { Vector2 } from "./structs.ts";
 
+// ESC means "Escape" (hex code 0x1b) .
+// ST means either BEL (hex code 0x07) or ESC \\.
+// Spaces in control sequences are to be ignored.
+// Values in [brackets] are variable parameters, not literals.
+// OSC means ESC ]
+// CSI means ESC [
+// SP means a literal "space" character (not ignored!)
+const ESC = "\x1b";
+const ST = "\x07";
+const OSC = `${ESC}]`;
+// OSC 1337 ; SetMark ST
+export const ITERM_SET_MARK = `${OSC}1337;SetMark${ST}`;
+
 export const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
 export const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 export const DIGITS = "0123456789";
