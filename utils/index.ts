@@ -7,3 +7,4 @@ export * from "./maths.ts";
 export * from "./optimisation.ts";
 export * from "./time.ts";
 export * from "./2d.ts";
+export * from "./path.ts";

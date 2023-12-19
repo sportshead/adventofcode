@@ -11,5 +11,8 @@
     },
     "scripts": {
         "lint": "prettier -w ."
+    },
+    "dependencies": {
+        "heap-js": "github:ignlg/heap-js"
     }
 }

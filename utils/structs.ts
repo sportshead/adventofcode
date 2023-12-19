@@ -60,60 +60,66 @@ export class Vector2<T extends number | bigint = number> {
         return a + b;
     }
 
-    distanceX(other: Vector2<T>): T {
+    distanceX(other: typeof this): T {
         return <T>(this.x - other.x);
     }
-    distanceY(other: Vector2<T>): T {
+    distanceY(other: typeof this): T {
         return <T>(this.y - other.y);
     }
 
-    add(amount: T): Vector2<T>;
-    add(other: Vector2<T>): Vector2<T>;
+    add(amount: T): typeof this;
+    add(other: Vector2<T>): typeof this;
     add(value: T | Vector2<T>) {
-        if (typeof value === "number" || typeof value === "bigint") {
-            value = new Vector2(value, value);
-        }
-        // @ts-ignore TS2365
-        this.x += value.x;
-        // @ts-ignore TS2365
-        this.y += value.y;
+        const vec: Vector2<T> =
+            typeof value === "number" || typeof value === "bigint"
+                ? new Vector2(value, value)
+                : value;
+
+        // @ts-expect-error cannot use arithmetic between T and T
+        this.x += vec.x;
+        // @ts-expect-error cannot use arithmetic between T and T
+        this.y += vec.y;
         return this;
     }
 
-    subtract(amount: T): Vector2<T>;
-    subtract(other: Vector2<T>): Vector2<T>;
+    subtract(amount: T): typeof this;
+    subtract(other: Vector2<T>): typeof this;
     subtract(value: T | Vector2<T>) {
-        if (typeof value === "number" || typeof value === "bigint") {
-            value = new Vector2(value, value);
-        }
-        // @ts-ignore TS2365
-        this.x -= value.x;
-        // @ts-ignore TS2365
-        this.y -= value.y;
+        const vec: Vector2<T> =
+            typeof value === "number" || typeof value === "bigint"
+                ? new Vector2(value, value)
+                : value;
+
+        // @ts-expect-error cannot use arithmetic between T and T
+        this.x -= vec.x;
+        // @ts-expect-error cannot use arithmetic between T and T
+        this.y -= vec.y;
         return this;
     }
 
-    multiply(amount: T): Vector2<T>;
-    multiply(other: Vector2<T>): Vector2<T>;
+    multiply(amount: T): typeof this;
+    multiply(other: Vector2<T>): typeof this;
     multiply(value: T | Vector2<T>) {
-        if (typeof value === "number" || typeof value === "bigint") {
-            value = new Vector2(value, value);
-        }
-        // @ts-ignore TS2365
-        this.x *= value.x;
-        // @ts-ignore TS2365
-        this.y *= value.y;
+        const vec: Vector2<T> =
+            typeof value === "number" || typeof value === "bigint"
+                ? new Vector2(value, value)
+                : value;
+
+        // @ts-expect-error cannot use arithmetic between T and T
+        this.x *= vec.x;
+        // @ts-expect-error cannot use arithmetic between T and T
+        this.y *= vec.y;
         return this;
     }
 
-    divide(this: Vector2<number>, amount: number): Vector2<number>;
-    divide(this: Vector2<number>, other: Vector2<number>): Vector2<number>;
+    divide(this: Vector2<number>, amount: number): typeof this;
+    divide(this: Vector2<number>, other: Vector2<number>): typeof this;
     divide(this: Vector2<number>, value: number | Vector2<number>) {
-        if (typeof value === "number") {
-            value = new Vector2(value, value);
-        }
-        this.x /= value.x;
-        this.y /= value.y;
+        const vec: Vector2<number> =
+            typeof value === "number" ? new Vector2(value, value) : value;
+
+        this.x /= vec.x;
+        this.y /= vec.y;
         return this;
     }
 
@@ -137,7 +143,7 @@ export class Vector2<T extends number | bigint = number> {
         return new Vector2<T>(0 as T, 0 as T).fromJSON(json);
     }
 
-    equals(other: Vector2<T>): boolean {
+    equals(other: typeof this): boolean {
         return this.x === other.x && this.y === other.y;
     }
 }
