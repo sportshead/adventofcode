@@ -16,7 +16,7 @@ export class NamedTreeNode<T = {}, K = string> {
         parent?.children?.set(name, this);
     }
 
-    getAndCastChild(name: K): NamedTreeNode<T, K> {
+    getAndCastChildNode(name: K): NamedTreeNode<T, K> {
         return this.children.get(name) as NamedTreeNode<T, K>;
     }
 }

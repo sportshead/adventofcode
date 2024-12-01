@@ -18,7 +18,7 @@ for (let i = 0; i < lines.length; i++) {
         } else if (args[1] === "..") {
             cwd = cwd.parent ?? root;
         } else {
-            cwd = cwd.getAndCastChild(args[1]);
+            cwd = cwd.getAndCastChildNode(args[1]);
         }
     } else if (args[0] === "ls") {
         i++;
