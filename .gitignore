@@ -172,3 +172,8 @@ dist
 .idea
 
 cookie.txt
+
+*.hi
+*.o
+part1
+part2
