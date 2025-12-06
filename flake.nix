@@ -27,25 +27,18 @@
             echo "failed to cd!"
             return
           )
-          [ ! -f part1.ts ] && (date -Iseconds >timestarted.txt)
 
           projectRoot="$(projectRoot.ts)"
-          [ ! -f part1.ts ] && cp "$projectRoot/template.ts" part1.ts
+          touch part1.hs
           touch input.txt
           touch _input.txt
 
           browse
-
-          if [[ "$@" != *"-s"* ]]; then
-            bun --watch run part1.ts &
-          fi
         '';
 
         part2-wrapper = pkgs.writeShellScriptBin "part2" ''
-          kill $!
-          [ ! -f part2.ts ] && cp part1.ts part2.ts
+          [ ! -f part2.hs ] && cp part1.hs part2.hs
           swap
-          bun --watch run part2.ts &
         '';
 
         swap-wrapper = pkgs.writeShellScriptBin "swap" ''
@@ -58,7 +51,7 @@
         '';
 
         bench-wrapper = pkgs.writeShellScriptBin "bench" ''
-          hyperfine -w 3 --export-json timings.json -P pt 1 2 'bun run part{pt}.ts'
+          hyperfine -w 3 --export-json timings.json --input input.txt -P pt 1 2 './part{pt}'
         '';
       in {
         devShells.default = pkgs.mkShell {
